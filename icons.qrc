@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/calibrate.svg</file>
+        <file>icons/coords.svg</file>
+        <file>icons/dro.svg</file>
+        <file>icons/plane.svg</file>
+        <file>icons/point.svg</file>
+        <file>icons/polygone.svg</file>
+        <file>icons/ruler.svg</file>
+    </qresource>
+</RCC>
