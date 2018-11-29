@@ -21,6 +21,8 @@ MainWindow::MainWindow(Controller* controller,
     connect(this->m_ui->bFakerSpinBox, SIGNAL(valueChanged(int)), this, SLOT(onFakerChanged()));
     connect(this->m_ui->cFakerSpinBox, SIGNAL(valueChanged(int)), this, SLOT(onFakerChanged()));
     connect(this->m_ui->dFakerSpinBox, SIGNAL(valueChanged(int)), this, SLOT(onFakerChanged()));
+
+    connect(this->m_ui->actionProject, SIGNAL(toggled(bool)), this->m_ui->renderWidget, SLOT(setFlatten(bool)));
 }
 
 MainWindow::~MainWindow() {
@@ -41,8 +43,8 @@ void MainWindow::onAnglesChanged(const Angles angles) {
 }
 
 void MainWindow::onFakerChanged() {
-    this->m_controller->process(this->m_ui->aFakerSpinBox->value(),
-                                this->m_ui->bFakerSpinBox->value(),
-                                this->m_ui->cFakerSpinBox->value(),
-                                this->m_ui->dFakerSpinBox->value());
+    this->m_controller->process(quint16(this->m_ui->aFakerSpinBox->value()),
+                                quint16(this->m_ui->bFakerSpinBox->value()),
+                                quint16(this->m_ui->cFakerSpinBox->value()),
+                                quint16(this->m_ui->dFakerSpinBox->value()));
 }

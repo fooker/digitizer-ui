@@ -61,21 +61,37 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="navigationTab">
          <attribute name="icon">
           <iconset resource="icons.qrc">
-           <normaloff>:/icons/icons/coords.svg</normaloff>:/icons/icons/coords.svg</iconset>
+           <normaloff>:/icons/coords.svg</normaloff>:/icons/coords.svg</iconset>
          </attribute>
          <attribute name="title">
           <string>Navigation</string>
          </attribute>
+         <widget class="QDial" name="dial">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>30</y>
+            <width>101</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>599</number>
+          </property>
+          <property name="wrapping">
+           <bool>true</bool>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="droTab">
          <attribute name="icon">
           <iconset resource="icons.qrc">
-           <normaloff>:/icons/icons/dro.svg</normaloff>:/icons/icons/dro.svg</iconset>
+           <normaloff>:/icons/dro.svg</normaloff>:/icons/dro.svg</iconset>
          </attribute>
          <attribute name="title">
           <string>DRO</string>
@@ -326,6 +342,10 @@ background-color: rgb(0, 0, 0)</string>
          </layout>
         </widget>
         <widget class="QWidget" name="fakeTab">
+         <attribute name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/point.svg</normaloff>:/icons/point.svg</iconset>
+         </attribute>
          <attribute name="title">
           <string>Fake</string>
          </attribute>
@@ -429,6 +449,8 @@ background-color: rgb(0, 0, 0)</string>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionProject"/>
+   <addaction name="separator"/>
    <addaction name="actionGrounding"/>
   </widget>
   <action name="actionGrounding">
@@ -437,13 +459,28 @@ background-color: rgb(0, 0, 0)</string>
    </property>
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/icons/calibrate.svg</normaloff>:/icons/icons/calibrate.svg</iconset>
+     <normaloff>:/icons/calibrate.svg</normaloff>:/icons/calibrate.svg</iconset>
    </property>
    <property name="text">
     <string>Grounding</string>
    </property>
    <property name="toolTip">
     <string>Select the Ground plane of your model</string>
+   </property>
+  </action>
+  <action name="actionProject">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/project.svg</normaloff>:/icons/project.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Project points onto base plane</string>
    </property>
   </action>
  </widget>
